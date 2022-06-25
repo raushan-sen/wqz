@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wqz/utils/firebase_init.dart';
+import 'package:provider/provider.dart';
+import 'package:wqz/provider/Google_sign_in.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
@@ -27,7 +28,9 @@ class _MyLoginState extends State<MyLogin> {
             ),
             GestureDetector(
               onTap: () {
-                // signup(context);
+                final provider =
+                    Provider.of<GoogleSignInProvider>(context, listen: false);
+                provider.googleLogin();
               },
               child: Container(
                 decoration: BoxDecoration(
