@@ -1,26 +1,76 @@
-var game = {
+var gamedata = {
   "Levels": {
     "Basic": [
       {
         "ID": 1,
-        "Question": "",
-        "Option A": "",
-        "Option B": "",
-        "Option C": "",
-        "Option D": "",
+        "Question": "2+5+7",
+        "Option A": "5",
+        "Option B": "4",
+        "Option C": "3",
+        "Option D": "2",
         "Correct Option": "D",
-        "Reasion":""
+        "Reasion": ""
       },
       {
-        "ID": 1,
-        "Question": "",
+        "ID": 2,
+        "Question": "dgrgh",
         "Option A": "",
         "Option B": "",
         "Option C": "",
         "Option D": "",
         "Correct Option": "D",
-        "Reasion":""
-      }
+        "Reasion": ""
+      },
+      {
+        "ID": 3,
+        "Question": "2+5+7",
+        "Option A": "5",
+        "Option B": "4",
+        "Option C": "3",
+        "Option D": "2",
+        "Correct Option": "D",
+        "Reasion": ""
+      },
+      {
+        "ID": 4,
+        "Question": "2+5+7",
+        "Option A": "5",
+        "Option B": "4",
+        "Option C": "3",
+        "Option D": "2",
+        "Correct Option": "D",
+        "Reasion": ""
+      },
+      {
+        "ID": 5,
+        "Question": "2+5+7",
+        "Option A": "5",
+        "Option B": "4",
+        "Option C": "3",
+        "Option D": "2",
+        "Correct Option": "D",
+        "Reasion": ""
+      },
+      {
+        "ID": 6,
+        "Question": "2+5+7",
+        "Option A": "5",
+        "Option B": "4",
+        "Option C": "3",
+        "Option D": "2",
+        "Correct Option": "D",
+        "Reasion": ""
+      },
+      {
+        "ID": 7,
+        "Question": "2+5+7",
+        "Option A": "5",
+        "Option B": "4",
+        "Option C": "3",
+        "Option D": "2",
+        "Correct Option": "D",
+        "Reasion": ""
+      },
     ],
     "Medium": [
       {
@@ -31,17 +81,17 @@ var game = {
         "Option C": "",
         "Option D": "",
         "Correct Option": "D",
-        "Reasion":""
+        "Reasion": ""
       },
       {
-        "ID": 1,
+        "ID": 2,
         "Question": "",
         "Option A": "",
         "Option B": "",
         "Option C": "",
         "Option D": "",
         "Correct Option": "D",
-        "Reasion":""
+        "Reasion": ""
       }
     ],
     "Advanced": [
@@ -53,18 +103,19 @@ var game = {
         "Option C": "",
         "Option D": "",
         "Correct Option": "D",
-        "Reasion":""
+        "Reasion": ""
       },
       {
-        "ID": 1,
+        "ID": 2,
         "Question": "",
         "Option A": "",
         "Option B": "",
         "Option C": "",
         "Option D": "",
         "Correct Option": "D",
-        "Reasion":""
+        "Reasion": ""
       }
     ]
   }
 };
+

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wqz/models/data_for_game.dart';
+import 'package:wqz/screens/winnig_screen.dart';
 import 'package:wqz/utils/colors.dart';
 import 'package:wqz/widgets/quiz_options.dart';
 
@@ -6,10 +8,12 @@ class GamePlay extends StatefulWidget {
   const GamePlay({
     Key? key,
     required this.id,
+    required this.level,
     required this.userid,
   }) : super(key: key);
 
   final int id;
+  final String level;
   final int userid;
 
   @override
@@ -23,7 +27,7 @@ class _GamePlayState extends State<GamePlay> {
       child: Scaffold(
           backgroundColor: const Color.fromARGB(1, 88, 77, 77),
           appBar: AppBar(
-            title: Text('Level ' + widget.id.toString()),
+            title: Text("Level ${widget.id}"),
             elevation: 0,
             centerTitle: true,
             backgroundColor: Colors.transparent,
@@ -36,7 +40,13 @@ class _GamePlayState extends State<GamePlay> {
               ),
               SliverToBoxAdapter(
                 child: Container(
-                  child: const Center(child: Text("2+2+3",style: TextStyle(color: textcolor,fontSize: 30,fontWeight: FontWeight.bold),)),
+                  child: Center(
+                      child: Text(gamedata["Levels"]![widget.level]![widget.id-1]["Question"].toString(),
+                    style: const TextStyle(
+                        color: textcolor,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold),
+                  )),
                   decoration: BoxDecoration(
                       color: secondarycolor,
                       borderRadius: BorderRadius.circular(10)),
@@ -45,19 +55,16 @@ class _GamePlayState extends State<GamePlay> {
                 ),
               ),
               const SliverPadding(padding: EdgeInsets.only(top: 20)),
-              const QuizOptions(option: "5"),
-              const SliverPadding(padding: EdgeInsets.only(top: 20)),
-              const QuizOptions(option: "6"),
-              const SliverPadding(padding: EdgeInsets.only(top: 20)),
-              const QuizOptions(option: "7"),
-              const SliverPadding(padding: EdgeInsets.only(top: 20)),
-              const QuizOptions(option: "4"),
+              SliverToBoxAdapter(
+                child: Column(
+                  children: const [QuizOptions()],
+                ),
+              ),
               const SliverPadding(padding: EdgeInsets.only(top: 20)),
               SliverToBoxAdapter(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context)
-                        .pushNamed("/winning_screen",arguments: ModalRoute.withName('/'));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>WinningScreen(userid: widget.userid, qid:widget.id,level: widget.level,)));
                   },
                   child: const Card(
                     margin: EdgeInsets.only(left: 20, right: 20),

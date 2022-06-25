@@ -31,7 +31,7 @@ class _MyLevelsState extends State<MyLevels> {
           slivers: <Widget>[
             SliverPadding(
               padding: const EdgeInsets.all(20),
-              sliver: Widget1(userid: int.fromEnvironment(widget.userid)),
+              sliver: Widget1(userid: int.fromEnvironment(widget.userid),level:widget.level.toString(),),
             )
           ],
         ),
