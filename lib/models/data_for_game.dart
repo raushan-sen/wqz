@@ -8,17 +8,17 @@ var gamedata = {
         "Option B": "4",
         "Option C": "3",
         "Option D": "2",
-        "Correct Option": "D",
+        "Correct Option": "3",
         "Reasion": ""
       },
       {
         "ID": 2,
         "Question": "dgrgh",
-        "Option A": "",
-        "Option B": "",
-        "Option C": "",
-        "Option D": "",
-        "Correct Option": "D",
+        "Option A": "2",
+        "Option B": "2",
+        "Option C": "3",
+        "Option D": "9",
+        "Correct Option": "3",
         "Reasion": ""
       },
       {
@@ -28,7 +28,7 @@ var gamedata = {
         "Option B": "4",
         "Option C": "3",
         "Option D": "2",
-        "Correct Option": "D",
+        "Correct Option": "2",
         "Reasion": ""
       },
       {
@@ -38,7 +38,7 @@ var gamedata = {
         "Option B": "4",
         "Option C": "3",
         "Option D": "2",
-        "Correct Option": "D",
+        "Correct Option": "3",
         "Reasion": ""
       },
       {
@@ -48,7 +48,7 @@ var gamedata = {
         "Option B": "4",
         "Option C": "3",
         "Option D": "2",
-        "Correct Option": "D",
+        "Correct Option": "2",
         "Reasion": ""
       },
       {
@@ -58,7 +58,7 @@ var gamedata = {
         "Option B": "4",
         "Option C": "3",
         "Option D": "2",
-        "Correct Option": "D",
+        "Correct Option": "4",
         "Reasion": ""
       },
       {
@@ -68,7 +68,7 @@ var gamedata = {
         "Option B": "4",
         "Option C": "3",
         "Option D": "2",
-        "Correct Option": "D",
+        "Correct Option": "3",
         "Reasion": ""
       },
     ],
@@ -76,11 +76,11 @@ var gamedata = {
       {
         "ID": 1,
         "Question": "",
-        "Option A": "",
-        "Option B": "",
-        "Option C": "",
-        "Option D": "",
-        "Correct Option": "D",
+        "Option A": "2",
+        "Option B": "3",
+        "Option C": "8",
+        "Option D": "4",
+        "Correct Option": "2",
         "Reasion": ""
       },
       {

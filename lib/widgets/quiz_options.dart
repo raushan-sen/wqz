@@ -1,126 +1,70 @@
 import 'package:flutter/material.dart';
+import '../screens/screens.dart';
 import '../utils/colors.dart';
 
 class QuizOptions extends StatefulWidget {
   const QuizOptions({
     Key? key,
-    // required this.json,
+    required this.level,
+    required this.userid,
+    required this.id,
+    required this.gamefordata,
+    required this.correctanswer,
   }) : super(key: key);
-  // final  json;
+  final String level;
+  final int userid;
+  final int id;
+  final List gamefordata;
+  final String correctanswer;
   @override
   State<QuizOptions> createState() => _QuizOptionsState();
 }
 
-var a = ["1", "4", "5", "6"];
-
 class _QuizOptionsState extends State<QuizOptions> {
-  bool isoptionAchoosen = false;
-  bool isoptionBchoosen = false;
-  bool isoptionCchoosen = false;
-  bool isoptionDchoosen = false;
+  bool isoptionchoosen = false;
+  int iscorrect = -1;
+  _isSelected(int index) {
+    setState(() {
+      iscorrect = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        // first option
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              isoptionAchoosen = true;
-              isoptionBchoosen = false;
-              isoptionCchoosen = false;
-              isoptionDchoosen = false;
-            });
-          },
-          child: Container(
-            child: Center(
-                child: Text(a[0],
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: textcolor, fontSize: 20))),
-            decoration: BoxDecoration(
-              color: isoptionAchoosen ? primarycolor : secondarycolor,
-              borderRadius: BorderRadius.circular(10),
+    return ListView.builder(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        itemCount: widget.gamefordata.length,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+            child: ListTile(
+              selected: false,
+              onTap: () {
+                if (widget.gamefordata[index] == widget.correctanswer) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => WinningScreen(
+                              level: widget.level,
+                              userid: widget.userid,
+                              qid: widget.id))));
+                } else {
+                  _isSelected(index);
+                }
+              },
+              minVerticalPadding: 20,
+              textColor: iscorrect != null && iscorrect == index
+                  ? errortextcolor
+                  : textcolor,
+              tileColor: iscorrect != null && iscorrect == index
+                  ? errorbgcolor
+                  : secondarycolor,
+              title: Text(
+                "${widget.gamefordata[index]}",
+              ),
             ),
-            height: 40,
-            margin: const EdgeInsets.only(left: 20, right: 20),
-          ),
-        ),
-        const Padding(padding: EdgeInsets.only(top: 20)),
-
-        // second option
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              isoptionAchoosen = false;
-              isoptionBchoosen = true;
-              isoptionCchoosen = false;
-              isoptionDchoosen = false;
-            });
-          },
-          child: Container(
-            child: Center(
-                child: Text(a[1],
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: textcolor, fontSize: 20))),
-            decoration: BoxDecoration(
-              color: isoptionBchoosen ? primarycolor : secondarycolor,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            height: 40,
-            margin: const EdgeInsets.only(left: 20, right: 20),
-          ),
-        ),
-        const Padding(padding: EdgeInsets.only(top: 20)),
-
-        // third option
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              isoptionAchoosen = false;
-              isoptionBchoosen = false;
-              isoptionCchoosen = true;
-              isoptionDchoosen = false;
-            });
-          },
-          child: Container(
-            child: Center(
-                child: Text(a[2],
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: textcolor, fontSize: 20))),
-            decoration: BoxDecoration(
-              color: isoptionCchoosen ? primarycolor : secondarycolor,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            height: 40,
-            margin: const EdgeInsets.only(left: 20, right: 20),
-          ),
-        ),
-        const Padding(padding: EdgeInsets.only(top: 20)),
-
-        // forth option
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              isoptionAchoosen = false;
-              isoptionBchoosen = false;
-              isoptionCchoosen = false;
-              isoptionDchoosen = true;
-            });
-          },
-          child: Container(
-            child: Center(
-                child: Text(a[3],
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: textcolor, fontSize: 20))),
-            decoration: BoxDecoration(
-              color: isoptionDchoosen ? primarycolor : secondarycolor,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            height: 40,
-            margin: const EdgeInsets.only(left: 20, right: 20),
-          ),
-        ),
-      ],
-    );
+          );
+        });
   }
 }

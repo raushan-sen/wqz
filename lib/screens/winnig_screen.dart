@@ -27,8 +27,9 @@ class _WinningScreenState extends State<WinningScreen> {
         backgroundColor: dominantcolor,
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Level ${widget.qid} Completed"),
+          title: Text("Level ${widget.qid + 1} Completed"),
           elevation: 0,
+          automaticallyImplyLeading: false,
           backgroundColor: dominantcolor,
         ),
         body: Center(
@@ -77,11 +78,13 @@ class _WinningScreenState extends State<WinningScreen> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MyLevels(
-                                    level: widget.level, userid: widget.userid.toString())));
+                        Navigator.pushAndRemoveUntil<void>(
+                          context,
+                          MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const MyHome(),maintainState: true),
+                          (Route<dynamic> route) => false,
+                        );
                       },
                       child: Container(
                           padding: const EdgeInsets.all(10),
@@ -97,7 +100,9 @@ class _WinningScreenState extends State<WinningScreen> {
                       width: 20,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        
+                      },
                       child: Container(
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(

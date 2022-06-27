@@ -7,16 +7,16 @@ var userdata = {
       "Profile link":"",
       "Games Played":{
         "Basic":{
-          "Completed":[{"ID":1},{"ID":3},{"ID":6}],
-          "unlocked":[{"ID":1},{"ID":3},{"ID":6},{"ID":4}]
+          "Completed":[1,2,3,4,5],
+          "unlocked":[1,2,3,4,5,6,]
         },
         "Medium":{
-          "Completed":[{"ID":1},{"ID":3},{"ID":6}],
-          "unlocked":[{"ID":4}]
+          "Completed":[2,3,4,5],
+          "unlocked":[2,3,4,5,4,7]
         },
         "Advanced":{
-          "Completed":[{"ID":1},{"ID":3},{"ID":6}],
-          "unlocked":[{"ID":5}]
+          "Completed":[2,3,4,5,],
+          "unlocked":[2,3,5,4,6]
         }
       }
     },

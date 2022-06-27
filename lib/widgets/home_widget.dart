@@ -111,7 +111,7 @@ class _MyHomewidgetState extends State<MyHomewidget> {
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              const MyLevels(level: "Basic", userid: "7"),
+                              const MyLevels(level: "Basic", userid: "1"),
                         ),
                       );
                     },
@@ -149,7 +149,7 @@ class _MyHomewidgetState extends State<MyHomewidget> {
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              const MyLevels(level: "Medium", userid: "7"),
+                              const MyLevels(level: "Medium", userid: "1"),
                         ),
                       );
                     },
